@@ -1,0 +1,15 @@
+{
+	"version": "0",
+	"id": "85085726-4d64-918b-c9bb-62b172316c7c",
+	"detail-type": "Fictitious Event",
+	"source": "aws.fiction",
+	"account": "261421242815",
+	"time": "2019-06-16T22:20:01Z",
+	"region": "us-west-7",
+	"resources": [
+		"arn:aws:fiction:us-west-7:261421242815:item/path"
+	],
+	"detail": {
+		"biscuit-type": "flaky"
+	}
+}

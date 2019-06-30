@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.perihelios.aws.lambda.cloudwatch.dispatcher"},{"l":"com.perihelios.aws.lambda.cloudwatch.dispatcher.event"}]

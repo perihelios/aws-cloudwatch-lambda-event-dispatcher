@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<!-- NewPage -->
+<html lang="en">
+<head>
+
+<title>CloudWatchEventDispatcher (cloudwatch-lambda-event-dispatcher 1.0.0 API)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="com.perihelios.aws.lambda.cloudwatch.dispatcher.CloudWatchEventDispatcher class">
+<meta name="keywords" content="withEventHandler()">
+<meta name="keywords" content="logMessage()">
+<meta name="keywords" content="dispatch()">
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../../jquery/jquery-ui.css" title="Style">
+<script type="text/javascript" src="../../../../../../script.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jszip/dist/jszip.min.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-ui.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="CloudWatchEventDispatcher (cloudwatch-lambda-event-dispatcher 1.0.0 API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var data = {"i0":10,"i1":10,"i2":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+var pathtoroot = "../../../../../../";
+var useModuleDirectories = true;
+loadScripts(document, 'script');</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<header role="banner">
+<nav role="navigation">
+<div class="fixedNav">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a id="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a id="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../index.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<ul class="navListSearch">
+<li><label for="search">SEARCH:</label>
+<input type="text" id="search" value="search" disabled="disabled">
+<input type="reset" id="reset" value="reset" disabled="disabled">
+</li>
+</ul>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a>
+<!-- ========= END OF TOP NAVBAR ========= -->
+</div>
+<div class="navPadding">&nbsp;</div>
+<script type="text/javascript"><!--
+$('.navPadding').css('padding-top', $('.fixedNav').css("height"));
+//-->
+</script>
+</nav>
+</header>
+<!-- ======== START OF CLASS DATA ======== -->
+<main role="main">
+<div class="header">
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.perihelios.aws.lambda.cloudwatch.dispatcher</a></div>
+<h2 title="Class CloudWatchEventDispatcher" class="title">Class CloudWatchEventDispatcher</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>com.perihelios.aws.lambda.cloudwatch.dispatcher.CloudWatchEventDispatcher</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<pre>public class <a href="../../../../../../src-html/com/perihelios/aws/lambda/cloudwatch/dispatcher/CloudWatchEventDispatcher.html#line.56">CloudWatchEventDispatcher</a>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<div class="block">Main entry point of the API&mdash;all users of this library will create and configure an instance of this class.
+ <p>
+ A typical usage of this class in a Lambda function is:
+ </p>
+ <pre>
+     ...
+     void myLambdaFunc(InputStream message, Context context) {
+         new CloudWatchEventDispatcher(message, context)
+             .withEventHandler(MyEvent1.class, new MyEvent1Handler())
+             .withEventHandler(MyEvent2.class, new MyEvent2Handler())
+             .logMessage()
+             .dispatch();
+     }
+     ...
+ </pre></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<div class="memberSummary">
+<table>
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Constructor</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.io.InputStream,com.amazonaws.services.lambda.runtime.Context)">CloudWatchEventDispatcher</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;message,
+                         <a href="../../../../../../../aws-lambda-java-core/javadoc/com/amazonaws/services/lambda/runtime/Context.html?is-external=true" title="class or interface in com.amazonaws.services.lambda.runtime" class="externalLink">Context</a>&nbsp;context)</code></th>
+<td class="colLast">
+<div class="block">Creates a dispatcher for a CloudWatch event, ready for further configuration.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</section>
+<!-- ========== METHOD SUMMARY =========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<div class="memberSummary">
+<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="tableTab" onclick="show(8);">Concrete Methods</button></div>
+<div id="memberSummary_tabpanel" role="tabpanel">
+<table aria-labelledby="t0">
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor" id="i0">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dispatch()">dispatch</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Dispatches the event to registered handlers.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code><a href="CloudWatchEventDispatcher.html" title="class in com.perihelios.aws.lambda.cloudwatch.dispatcher">CloudWatchEventDispatcher</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logMessage()">logMessage</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Instructs the dispatcher to log the incoming message, before it is parsed as JSON.</div>
+</td>
+</tr>
+<tr class="altColor" id="i2">
+<td class="colFirst"><code>&lt;T extends <a href="event/CloudWatchEvent.html" title="class in com.perihelios.aws.lambda.cloudwatch.dispatcher.event">CloudWatchEvent</a>&gt;<br><a href="CloudWatchEventDispatcher.html" title="class in com.perihelios.aws.lambda.cloudwatch.dispatcher">CloudWatchEventDispatcher</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withEventHandler(java.lang.Class,java.util.function.BiConsumer)">withEventHandler</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;eventType,
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiConsumer.html?is-external=true" title="class or interface in java.util.function" class="externalLink">BiConsumer</a>&lt;? super T,&#8203;<a href="../../../../../../../aws-lambda-java-core/javadoc/com/amazonaws/services/lambda/runtime/Context.html?is-external=true" title="class or interface in com.amazonaws.services.lambda.runtime" class="externalLink">Context</a>&gt;&nbsp;handler)</code></th>
+<td class="colLast">
+<div class="block">Registers an event handler for a particular CloudWatch event type.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a id="&lt;init&gt;(java.io.InputStream,com.amazonaws.services.lambda.runtime.Context)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CloudWatchEventDispatcher</h4>
+<pre>public&nbsp;<a href="../../../../../../src-html/com/perihelios/aws/lambda/cloudwatch/dispatcher/CloudWatchEventDispatcher.html#line.70">CloudWatchEventDispatcher</a>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;message,
+                                 <a href="../../../../../../../aws-lambda-java-core/javadoc/com/amazonaws/services/lambda/runtime/Context.html?is-external=true" title="class or interface in com.amazonaws.services.lambda.runtime" class="externalLink">Context</a>&nbsp;context)</pre>
+<div class="block">Creates a dispatcher for a CloudWatch event, ready for further configuration.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>message</code> - raw message stream, presumed to contain CloudWatch event JSON</dd>
+<dd><code>context</code> - AWS Lambda context, to be passed to handlers as they are invoked</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<!-- ============ METHOD DETAIL ========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a id="withEventHandler(java.lang.Class,java.util.function.BiConsumer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withEventHandler</h4>
+<pre class="methodSignature">public&nbsp;&lt;T extends <a href="event/CloudWatchEvent.html" title="class in com.perihelios.aws.lambda.cloudwatch.dispatcher.event">CloudWatchEvent</a>&gt;&nbsp;<a href="CloudWatchEventDispatcher.html" title="class in com.perihelios.aws.lambda.cloudwatch.dispatcher">CloudWatchEventDispatcher</a>&nbsp;<a href="../../../../../../src-html/com/perihelios/aws/lambda/cloudwatch/dispatcher/CloudWatchEventDispatcher.html#line.89">withEventHandler</a>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;eventType,
+                                                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiConsumer.html?is-external=true" title="class or interface in java.util.function" class="externalLink">BiConsumer</a>&lt;? super T,&#8203;<a href="../../../../../../../aws-lambda-java-core/javadoc/com/amazonaws/services/lambda/runtime/Context.html?is-external=true" title="class or interface in com.amazonaws.services.lambda.runtime" class="externalLink">Context</a>&gt;&nbsp;handler)</pre>
+<div class="block">Registers an event handler for a particular CloudWatch event type.
+ <p>
+ All classes passed in <code>eventType</code> must be annotated with <a href="event/DetailType.html" title="annotation in com.perihelios.aws.lambda.cloudwatch.dispatcher.event"><code>DetailType</code></a>. See the general description
+ of that annotation, and of <a href="event/CloudWatchEvent.html" title="class in com.perihelios.aws.lambda.cloudwatch.dispatcher.event"><code>CloudWatchEvent</code></a>, for details.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - type of event, with type bounds ensuring compatibility between <code>eventType</code> and
+                  <code>handler</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>eventType</code> - class to which events will be unmarshalled</dd>
+<dd><code>handler</code> - consumer of events of <code>eventType</code> type</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a reference to this object</dd>
+</dl>
+</li>
+</ul>
+<a id="logMessage()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>logMessage</h4>
+<pre class="methodSignature">public&nbsp;<a href="CloudWatchEventDispatcher.html" title="class in com.perihelios.aws.lambda.cloudwatch.dispatcher">CloudWatchEventDispatcher</a>&nbsp;<a href="../../../../../../src-html/com/perihelios/aws/lambda/cloudwatch/dispatcher/CloudWatchEventDispatcher.html#line.123">logMessage</a>()</pre>
+<div class="block">Instructs the dispatcher to log the incoming message, before it is parsed as JSON.
+ <p>
+ Activating logging via this method is primarily useful for troubleshooting errors where an AWS Lambda may be
+ receiving messages <em>other than</em> CloudWatch events. CloudWatch will only send valid JSON documents,
+ but it is possible to (erroneously) connect a Lambda function expecting CloudWatch events to another event
+ source.
+ <p>
+ Logging is done via the <a href="../../../../../../../aws-lambda-java-core/javadoc/com/amazonaws/services/lambda/runtime/LambdaLogger.html?is-external=true" title="class or interface in com.amazonaws.services.lambda.runtime" class="externalLink"><code>LambdaLogger</code></a> obtained from
+ <a href="../../../../../../../aws-lambda-java-core/javadoc/com/amazonaws/services/lambda/runtime/Context.html?is-external=true#getLogger()" title="class or interface in com.amazonaws.services.lambda.runtime" class="externalLink"><code>Context.getLogger()</code></a>. CloudWatch Logs must be enabled for the Lambda, and the Lambda's role must have
+ the necessary permissions to write to CloudWatch Logs.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a reference to this object</dd>
+</dl>
+</li>
+</ul>
+<a id="dispatch()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>dispatch</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;<a href="../../../../../../src-html/com/perihelios/aws/lambda/cloudwatch/dispatcher/CloudWatchEventDispatcher.html#line.140">dispatch</a>()</pre>
+<div class="block">Dispatches the event to registered handlers.
+ <p>
+ This is the terminal operation of the dispatcher. All settings specified via the other methods of this class are
+ applied at this time.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the message is not valid JSON, or if the message is missing
+                                  <code>detail-type</code> or <code>detail</code> properties, or if the message's
+                                  <code>detail-type</code> does not correspond to any event types registered via
+                                  <a href="#withEventHandler(java.lang.Class,java.util.function.BiConsumer)"><code>withEventHandler()</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+</main>
+<!-- ========= END OF CLASS DATA ========= -->
+<footer role="contentinfo">
+<nav role="navigation">
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a id="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a id="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../index.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+</div>
+<a id="skip.navbar.bottom">
+<!--   -->
+</a>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+</nav>
+<p class="legalCopy"><small>Copyright &copy; 2019 Perihelios LLC. All rights reserved.</small></p>
+</footer>
+</body>
+</html>

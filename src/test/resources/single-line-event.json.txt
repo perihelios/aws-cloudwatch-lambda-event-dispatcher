@@ -1,0 +1,1 @@
+{"detail-type":"Fictitious Event","detail":{}}
